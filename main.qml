@@ -5,10 +5,28 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("KyuML-Kute Application")
 
     Label{
-        text: "Harshil learns QML/QT for helping to provide accessibility features in KDE";
+        id: label;
+        text: "Label"
         anchors.centerIn: parent;
+    }
+
+    TextField {
+        id: textField
+        x: 235
+        y: 93
+        placeholderText: qsTr("Text Field")
+    }
+
+    Button {
+        id: button
+        x: 255
+        y: 172
+        text: qsTr("Click me")
+        onClicked: {
+            label.text = textField.text;
+        }
     }
 }
